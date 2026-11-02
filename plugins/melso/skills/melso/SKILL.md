@@ -1,6 +1,6 @@
 ---
 name: melso
-description: "Connect Melso or work with the user's Melso company: invoices, expenses, income, tax returns and Gestiones. Use for Melso fiscal records and professional cases, not general tax advice unrelated to Melso."
+description: "Connect Melso or work with the user's Melso company: expenses, income, contacts, tax returns and Gestiones, and invoices where the connection lists them. Use for Melso fiscal records and professional cases, not general tax advice unrelated to Melso."
 ---
 
 # Work with Melso
@@ -57,9 +57,9 @@ ticket or send the person to manual cleanup when they are listed.
 
 Read actions of mixed families use the listed `*_read` tool: `contacts_read`,
 `invoices_read`, `expenses_read`, `income_read`, `accounting_read`, `bank_read`,
-`bank_statements_read`, `book_imports_read`, `gestiones_read` and
-`fiscal_profile_read`. The base name lists change actions. Read-only families
-such as `taxes` and `documents` keep their names. Use only the action enums
+`bank_statements_read`, `book_imports_read`, `gestiones_read`,
+`documents_read` and `fiscal_profile_read`. The base name lists change
+actions. Read-only families such as `taxes` keep their names. Use only the action enums
 advertised to this connection; the server applies the same company, role and
 plan gates to every call. Reading a version never authorizes changing it.
 
@@ -86,8 +86,9 @@ never create a replacement invoice or blindly retry a mutation.
 
 ## Records and documents
 
-- `contacts`, `invoices`, `payments`, `expenses` and `income` work on this
-  company's records. Follow each action's schema; amounts are EUR decimal
+- `contacts`, `expenses` and `income` work on this
+  company's records, and `invoices` and `payments` when this connection lists
+  them. Follow each action's schema; amounts are EUR decimal
   strings. Read an existing record before updating it and pass its saved
   `version` as `expected_version` where required.
 - `contacts` keeps the company's customers and suppliers with their tax ID,
@@ -102,6 +103,9 @@ never create a replacement invoice or blindly retry a mutation.
   If the host cannot transfer the file, share the returned `web_upload_url`
   for the person to upload it in Melso. Do not claim a document was recorded
   until the tool confirms the resulting record.
+- Invoicing with Melso is a module that can be switched off. When `invoices`
+  is not listed, say that this connection cannot create or issue invoices and
+  do not offer to.
 - Create and save invoices with `invoices` `prepare`, for a customer from
   `contacts`. Ask only for missing customer, line-item or fiscal information
   and show the saved draft's totals.

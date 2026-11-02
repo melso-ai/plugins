@@ -1,22 +1,22 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "melso",
-  "version": "0.2.0",
-  "description": "Work with your company's invoices, expenses, taxes and Gestiones in Melso.",
+  "version": "0.2.1",
+  "description": "Work with your company's expenses, income, taxes and Gestiones in Melso.",
   "author": {
     "name": "Melso",
     "url": "https://melso.ai"
   },
   "homepage": "https://melso.ai/mcp",
-  "keywords": ["melso", "invoices", "expenses", "taxes", "Spain", "Hacienda"],
+  "keywords": ["melso", "expenses", "income", "taxes", "Spain", "Hacienda"],
   "extensions": {
     "com.openai": {
       "mcpServers": "./mcp.json",
       "onboardingSkill": "./skills/melso/SKILL.md",
       "interface": {
         "displayName": "Melso",
-        "shortDescription": "Invoices, expenses, taxes and Gestiones in Melso.",
-        "longDescription": "Connect your Melso company to work with invoices, expenses, taxes and Gestiones. Create invoice drafts from your chat and issue the exact version you authorize when issuance is available. Approve tax returns and Gestiones in Melso; its professionals review and file included returns.",
+        "shortDescription": "Expenses, income, taxes and Gestiones in Melso.",
+        "longDescription": "Connect your Melso company to record expenses from your receipts and supplier invoices, review your income, keep your contacts, check your tax calendar and returns, and follow your Gestiones. Approve tax returns and Gestiones in Melso; its professionals review and file included returns.",
         "developerName": "Melso",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],
@@ -25,7 +25,7 @@
         "termsOfServiceURL": "https://melso.ai/terms",
         "defaultPrompt": [
           "Show my next tax deadlines in Melso.",
-          "Create an invoice in Melso for this month's work.",
+          "Show this quarter's expenses and income in Melso.",
           "Show my open Gestiones in Melso."
         ],
         "brandColor": "#F04E42",

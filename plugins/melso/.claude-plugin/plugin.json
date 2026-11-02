@@ -1,11 +1,11 @@
 {
   "name": "melso",
-  "version": "0.2.0",
-  "description": "Work with your company's invoices, expenses, taxes and Gestiones in Melso.",
+  "version": "0.2.1",
+  "description": "Work with your company's expenses, income, taxes and Gestiones in Melso.",
   "author": {
     "name": "Melso",
     "url": "https://melso.ai"
   },
   "homepage": "https://melso.ai/mcp",
-  "keywords": ["melso", "invoices", "expenses", "taxes", "Spain", "Hacienda"]
+  "keywords": ["melso", "expenses", "income", "taxes", "Spain", "Hacienda"]
 }

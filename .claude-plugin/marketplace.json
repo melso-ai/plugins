@@ -1,0 +1,16 @@
+{
+  "name": "melso",
+  "metadata": {"description": "Melso plugins: invoices, expenses, taxes and Gestiones."},
+  "owner": {
+    "name": "Melso",
+    "url": "https://melso.ai"
+  },
+  "plugins": [
+    {
+      "name": "melso",
+      "source": "./plugins/melso",
+      "description": "Work with your company's invoices, expenses, taxes and Gestiones in Melso.",
+      "category": "productivity"
+    }
+  ]
+}

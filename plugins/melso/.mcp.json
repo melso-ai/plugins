@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "melso": {
+      "type": "http",
+      "url": "https://mcp.melso.ai/mcp"
+    }
+  }
+}

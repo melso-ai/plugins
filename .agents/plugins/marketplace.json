@@ -1,0 +1,20 @@
+{
+  "name": "melso",
+  "interface": {
+    "displayName": "Melso"
+  },
+  "plugins": [
+    {
+      "name": "melso",
+      "source": {
+        "source": "local",
+        "path": "./plugins/melso"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

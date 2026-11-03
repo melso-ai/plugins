@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "melso",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Work with your company's expenses, income, taxes and Gestiones in Melso.",
   "author": {
     "name": "Melso",
@@ -15,12 +15,13 @@
       "onboardingSkill": "./skills/melso/SKILL.md",
       "interface": {
         "displayName": "Melso",
-        "shortDescription": "Expenses, income, taxes and Gestiones in Melso.",
+        "shortDescription": "Expenses, income and taxes",
         "longDescription": "Connect your Melso company to record expenses from your receipts and supplier invoices, review your income, keep your contacts, check your tax calendar and returns, and follow your Gestiones. Approve tax returns and Gestiones in Melso; its professionals review and file included returns.",
         "developerName": "Melso",
         "category": "Productivity",
         "capabilities": ["Read", "Write"],
         "websiteURL": "https://melso.ai/mcp",
+        "supportURL": "mailto:sergi@melso.ai",
         "privacyPolicyURL": "https://melso.ai/privacy",
         "termsOfServiceURL": "https://melso.ai/terms",
         "defaultPrompt": [

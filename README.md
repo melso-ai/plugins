@@ -18,6 +18,14 @@ address, a skill and an icon.
 
 ## Claude Code
 
+In Claude Code 2.1.275 or later, install it in one step:
+
+```
+/plugin install melso --marketplace melso-ai/plugins
+```
+
+On older versions, add the marketplace first:
+
 ```sh
 claude plugin marketplace add melso-ai/plugins
 claude plugin install melso@melso

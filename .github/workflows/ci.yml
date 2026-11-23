@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Manifests, paths and skills
+        run: python3 scripts/validate.py
+
+      - name: JSON schemas
+        run: |
+          pipx run check-jsonschema==0.39.0 --schemafile https://agent-plugins.org/schemas/1.0.0/plugin.schema.json plugins/*/plugin.json
+          pipx run check-jsonschema==0.39.0 --schemafile https://agent-plugins.org/schemas/1.0.0/mcp.schema.json plugins/*/mcp.json
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Claude Code plugin validate
+        run: |
+          npx --yes @anthropic-ai/claude-code@2.1.330 plugin validate .
+          for plugin in plugins/*/; do
+            npx --yes @anthropic-ai/claude-code@2.1.330 plugin validate "$plugin"
+          done

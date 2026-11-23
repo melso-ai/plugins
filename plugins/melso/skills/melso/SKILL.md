@@ -33,11 +33,22 @@ company and any remaining setup step, then stop. Use read-only calls for
 connection checks; never create records, upload files or send messages as a
 test.
 
-If `company` reports pending onboarding, use the authenticated setup link
-provided by Melso or guide the owner to the web app's setup for that company.
-While setup is pending, only `company`, `fiscal_profile_read`, `fiscal_profile` and
-`support_tickets_create` are listed. Companies are set up by the Melso team;
-do not promise company self-signup. Without a plan that includes the tools,
+If `company` reports `onboarding`, an autónomo's setup is pending: use the
+authenticated setup link provided by Melso or guide the owner to the web app's
+setup for that company. While setup is pending, only `company`,
+`fiscal_profile_read`, `fiscal_profile` and `support_tickets_create` are listed.
+
+An empresa that already exists can sign itself up on Melso's web app and pay
+its plan there, with nobody from the Melso team in between; companies the team
+creates start without that step. While a self-signed-up company's plan is
+unpaid, `company` reports `plan_required` with its `step` (`identify`,
+`plan` or `unpaid`) and the `payment_url` of its setup page. Only reads of
+its records and its fiscal profile are listed, and any other action answers
+`plan_required`: share `payment_url` with the owner, who pays in the web app.
+The payment starts Melso's tax service; no tool pays the plan. Its Gestiones
+wait for the plan too, except incorporating a new S.L. (`gestiones` `create`
+with kind `constitucion_sl`), which opens that S.L. as a company of its own,
+paid separately. For any other company without a plan that includes the tools,
 record reads can remain available and a Gestión draft can still be saved.
 Use the advertised action enums to determine what is available.
 

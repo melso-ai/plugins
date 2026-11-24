@@ -1,6 +1,7 @@
 {
   "name": "melso",
-  "version": "0.2.4",
+  "version": "0.2.5",
+  "displayName": "Melso",
   "description": "Work with your company's expenses, income, taxes and Gestiones in Melso.",
   "author": {
     "name": "Melso",

@@ -1,6 +1,6 @@
 {
   "name": "melso",
-  "version": "0.2.5",
+  "version": "0.2.7",
   "displayName": "Melso",
   "description": "Work with your company's expenses, income, taxes and Gestiones in Melso.",
   "author": {
@@ -9,9 +9,11 @@
   },
   "homepage": "https://melso.ai/mcp",
   "keywords": ["melso", "expenses", "income", "taxes", "Spain", "Hacienda"],
+  "license": "MIT",
   "repository": "https://github.com/melso-ai/plugins",
+  "icon": "./assets/icon.png",
   "documentationUrl": "https://melso.ai/mcp",
-  "supportUrl": "mailto:sergi@melso.ai",
+  "supportUrl": "https://github.com/melso-ai/plugins/issues",
   "privacyPolicyUrl": "https://melso.ai/privacy",
   "termsOfServiceUrl": "https://melso.ai/terms"
 }
